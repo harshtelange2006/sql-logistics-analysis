@@ -4,10 +4,11 @@ use operation;
 SELECT
     shipping_mode,
     COUNT(*) AS total_orders,
-    SUM(CASE WHEN late_delivery_risk = 'Yes' THEN 1 ELSE 0 END) AS late_orders
+    SUM(CASE WHEN late_delivery_risk = 'Yes' THEN 1 ELSE 0 END) AS late_orders,
+    ROUND(100 * AVG(late_delivery_risk = 'Yes'), 1) AS late_pct
 FROM orders
 GROUP BY shipping_mode
-ORDER BY total_orders DESC;
+ORDER BY late_pct DESC;
 
 /*2. Which regions have the biggest delay*/
 SELECT
