@@ -1,56 +1,71 @@
-# Supply Chain Delay Analysis (SQL)
+# Supply Chain Late Delivery Analysis
 
-## Problem Statement
-Late deliveries can impact customer satisfaction, profitability, and market performance.  
-The goal of this project is to analyze order and sales data to identify where delays occur most often, which categories and regions are affected, and how late deliveries influence profit and cancellations.
-
-## Business Questions Solved
-1. Which shipping mode is late most often?  
-2. Which regions have the biggest delay vs promise?  
-3. Which product categories are late most?  
-4. Do late orders lose profit or get cancelled more?  
-5. Which markets have high volume and high delay?  
-
-## Overview
-Analyzed order and sales data to identify shipping delays, regional performance issues, product category lateness, and profit/cancellation risks.
+## Business Problem
+Where are late deliveries concentrated, and how are they associated with
+sales and profit?
+Late deliveries can hurt customer experience and business performance.
+The objective of this analysis is to identify which shipping modes, regions,
+markets, and product categories have the highest volume and rate of late
+deliveries.
 
 ## Dataset
-- Source: kaggle
-- Tables: Orders, Sales, Product, Categories
-- Size: ~180k rows across Y tables
+Used the DataCo Supply Chain dataset containing order, sales, product,
+and category information.
 
-## Tools Used
-- SQL (MySQL)
+## Tools
+- MySQL
+- SQL
+- DataCo Supply Chain Dataset (kaggle)
 
-## What I Did
-- Connected and explored the dataset containing Orders, Sales, Product, and Categories tables.
-- Wrote SQL queries to answer 5 business questions:
-  - Identified which shipping mode is most late.
-  - Analyzed regions with the biggest delivery delays.
-  - Found product categories with the highest late deliveries.
-  - Compared profit and cancellation rates for late vs on-time orders.
-  - Measured markets with both high order volume and high delays.
-- Applied SQL techniques:
-  - Joins across multiple tables (Orders, Sales, Product, Categories).
-  - Aggregations (COUNT, SUM, AVG).
-  - CASE statements for conditional logic.
-  - Grouping and ordering for ranking results.
-- Organized queries with comments for readability.
-
+## Approach
+1. Joined data across 4 tables: orders, sales, product, and categories.
+2. Calculated total orders, late orders, and late-delivery rates.
+3. Analyzed late deliveries by shipping mode, region, category, and market.
+4. Compared late and on-time orders based on sales and profit.
+5. Converted findings into business recommendations.
 
 ## Key Findings
-- Air shipping mode had the highest delay frequency.
-- Region X showed the largest gap between promised vs actual delivery.
-- Category Y had the most late deliveries.
-- Late orders showed lower average profit and higher cancellation rates.
-- Market Z had both high order volume and high delays.
 
-## Files
-- `queries.sql` — all SQL queries
-- `schema.sql` — (optional) table creation scripts
-- `/outputs` — (optional) screenshots or CSVs of query results
-- `insights.md` — (optional) short notes on findings
+### Shipping Mode
+- Standard Class has the highest number of late orders of 41k approx.
+- First Class has the highest late-delivery rate 95.3%.
 
-## Notes
-Some queries were refined with the help of AI tools, but all results were tested and validated manually.
+### Region
+- Central America has the highest number of late orders of 5.1k approx.
+- Central Africa has the highest late-delivery rate 58.0%.
+
+### Market
+- LATAM has the highest number of late orders of 28k approx.
+- Europe has the highest late-delivery rate 55.2%.
+
+### Profit Impact
+- Late orders generated 0.4% lower sales than on-time orders.
+- Late orders generated 3.8% lower profit than on-time orders.
+
+## Business Recommendations
+- Audit First Class delivery performance and carrier-level performance.
+- Prioritize Standard Class and Europe because they contribute the largest
+  volume of late orders.
+- Investigate carrier and route performance in LATAM and Central Africa,
+  where late-delivery rates are highest.
+
+## Query Results
+
+![Shipping mode output](images/q1.png)
+
+![Region output](images/q2.png)
+
+## Project Files
+- [SQL Queries](queries.sql)
+
+## Project Structure
+
+├── README.md
+├── queries.sql
+└── images/
+    ├── q1.png
+    └── q2.png
+
+## Author
+Harsh Telange · [LinkedIn](your-link)
 
