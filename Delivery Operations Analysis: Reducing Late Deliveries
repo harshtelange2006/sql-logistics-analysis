@@ -51,21 +51,8 @@ and category information.
 
 ## Query Results
 
-![Shipping mode output](images/q1.png)
-
-![Region output](images/q2.png)
-
-## Project Files
-- [SQL Queries](queries.sql)
-
-## Project Structure
-
-├── README.md
-├── queries.sql
-└── images/
-    ├── q1.png
-    └── q2.png
 
 ## Author
-Harsh Telange · [LinkedIn](your-link)
+Harsh Telange 
+linkedin.com/in/harsh-telange2006
 
