@@ -43,7 +43,19 @@ and category information.
 - Late orders generated 3.8% lower profit than on-time orders.
 
 ## Query result
+## Screenshots
 
+### 1. Which shipping mode is most late?
+![Shipping mode](images/q1-shipping-mode-late.png)
+
+### 2. Which regions have the biggest delay?
+![Region delay](images/q2-region-delay.png)
+
+### 3. Do late orders lose profit or get cancelled more?
+![Late vs profit](images/q3-late-vs-profit-cancel.png)
+
+### 4. Which markets have high volume and high delay?
+![Market delay](images/q4.png)
 
 ## Business Recommendations
 - Audit First Class delivery performance and carrier-level performance.
